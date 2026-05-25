@@ -1,0 +1,34 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "listings"
+    label: "Listings"
+    folder: "listings"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string", hint: "e.g. Charming Stone Cottage with Sea Views in County Clare" }
+      - { label: "Price", name: "price", widget: "string", hint: "e.g. €285,000 or $395,000 USD" }
+      - { label: "Country", name: "country", widget: "string", hint: "e.g. Ireland" }
+      - { label: "Country Flag Emoji", name: "flag", widget: "string", hint: "e.g. 🇮🇪" }
+      - { label: "Location (City/Region)", name: "location", widget: "string", hint: "e.g. County Clare, Wild Atlantic Way, Ireland" }
+      - {
+          label: "Region",
+          name: "region",
+          widget: "select",
+          options: ["europe", "latin-america", "southeast-asia", "mediterranean", "africa", "caribbean", "oceania", "scandinavia"]
+        }
+      - { label: "Bedrooms", name: "bedrooms", widget: "number", value_type: "int" }
+      - { label: "Bathrooms", name: "bathrooms", widget: "number", value_type: "int" }
+      - { label: "Size (m² or sq ft)", name: "size", widget: "string", hint: "e.g. 110 m² or 1,200 sq ft" }
+      - { label: "Hero Photo", name: "photo", widget: "image" }
+      - { label: "Description", name: "body", widget: "markdown" }
+      - { label: "Featured (show large on homepage)?", name: "featured", widget: "boolean", default: false }
+      - { label: "Tag (e.g. Deal, New, Editor's Pick)", name: "tag", widget: "string", required: false }
+      - { label: "Listing URL (link to original listing)", name: "listing_url", widget: "string", required: false }
+      - { label: "Date Added", name: "date", widget: "datetime" }
