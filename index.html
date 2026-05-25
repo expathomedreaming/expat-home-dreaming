@@ -1,17 +1,1271 @@
----
-title: "Charming Stone Cottage on 4 Acres with Sea Views Along the Burren"
-price: "€285,000"
-country: "Ireland"
-flag: "🇮🇪"
-location: "County Clare, Wild Atlantic Way, Ireland"
-region: "europe"
-bedrooms: 3
-bathrooms: 1
-size: "110 m²"
-photo: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80"
-featured: false
-tag: ""
-listing_url: "#"
-date: 2026-04-01T00:00:00.000Z
----
-A lovingly restored 1890s stone cottage with a turf fireplace, flagstone floors, and acres of wildflower meadow tumbling down toward Galway Bay.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expat Home Dreaming – Homes for Sale Around the World</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sand: #f5f0e8;
+    --parchment: #ede5d4;
+    --terracotta: #c4673a;
+    --terracotta-light: #d4845a;
+    --deep-teal: #1a3a3a;
+    --teal: #2a5252;
+    --gold: #b8943f;
+    --gold-light: #d4ae5a;
+    --ink: #1c1c1c;
+    --muted: #7a7068;
+    --border: #d8cfc0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--sand);
+    color: var(--ink);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  /* ── TOP BAR ── */
+  .top-bar {
+    background: var(--deep-teal);
+    color: rgba(255,255,255,0.7);
+    text-align: center;
+    padding: 8px 20px;
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .top-bar a { color: var(--gold-light); text-decoration: none; }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--deep-teal);
+    padding: 28px 40px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.25);
+  }
+
+  .logo-block { text-align: center; flex: 1; }
+  .logo-eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 4px;
+  }
+  .logo-main {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 3vw, 34px);
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+  }
+  .logo-main em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+  .logo-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 3px;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--teal);
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    border-bottom: 2px solid var(--gold);
+    flex-wrap: wrap;
+  }
+  nav a {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    padding: 14px 22px;
+    transition: all 0.2s;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+  }
+  nav a:hover, nav a.active {
+    color: var(--gold-light);
+    border-bottom-color: var(--gold-light);
+    background: rgba(255,255,255,0.05);
+  }
+
+  /* ── HERO SLIDESHOW ── */
+  .hero {
+    position: relative;
+    height: 72vh;
+    min-height: 480px;
+    overflow: hidden;
+    background: var(--deep-teal);
+  }
+  .hero-slides { display: flex; height: 100%; transition: transform 0.9s cubic-bezier(.77,0,.18,1); }
+  .hero-slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+  }
+  .hero-slide::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(26,58,58,0.72) 0%,
+      rgba(26,58,58,0.3) 50%,
+      rgba(0,0,0,0.15) 100%
+    );
+  }
+  .hero-caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    z-index: 2;
+    padding: 50px 60px 50px;
+    background: linear-gradient(to top, rgba(26,58,58,0.9) 0%, transparent 100%);
+  }
+  .hero-tag {
+    display: inline-block;
+    background: var(--terracotta);
+    color: #fff;
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    margin-bottom: 14px;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 52px);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+    max-width: 700px;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
+  .hero-meta {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .hero-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--gold-light);
+  }
+  .hero-loc {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.08em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .hero-loc::before { content: '📍'; font-size: 12px; }
+  .hero-btn {
+    display: inline-block;
+    background: var(--terracotta);
+    color: #fff;
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 11px 26px;
+    text-decoration: none;
+    transition: background 0.2s;
+    margin-top: 4px;
+  }
+  .hero-btn:hover { background: var(--terracotta-light); }
+  .hero-dots {
+    position: absolute;
+    bottom: 24px; right: 60px;
+    z-index: 10;
+    display: flex;
+    gap: 8px;
+  }
+  .hero-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.35);
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .hero-dot.active { background: var(--gold-light); transform: scale(1.3); }
+  .hero-arrows {
+    position: absolute;
+    top: 50%; transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 10;
+    pointer-events: none;
+  }
+  .hero-arrow {
+    width: 44px; height: 44px;
+    background: rgba(26,58,58,0.6);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: all;
+    transition: background 0.2s;
+  }
+  .hero-arrow:hover { background: var(--terracotta); }
+
+  /* ── REGION FILTER BAR ── */
+  .filter-bar {
+    background: var(--parchment);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    overflow-x: auto;
+  }
+  .filter-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+    margin-right: 4px;
+  }
+  .filter-btn {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 7px 16px;
+    border: 1.5px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .filter-btn:hover, .filter-btn.active {
+    background: var(--deep-teal);
+    border-color: var(--deep-teal);
+    color: #fff;
+  }
+  .filter-btn.active { background: var(--terracotta); border-color: var(--terracotta); color: #fff; }
+
+  /* ── MAIN LAYOUT ── */
+  .site-wrap {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 48px 40px;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 48px;
+    align-items: start;
+  }
+
+  /* ── LISTINGS GRID ── */
+  .listings-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 14px;
+  }
+  .listings-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--deep-teal);
+  }
+  .listings-count {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .listings-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+  }
+
+  /* Featured listing (spans 2 cols) */
+  .listing-card.featured {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 0;
+    background: #fff;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+  }
+  .listing-card.featured .card-img { height: 340px; }
+
+  .listing-card {
+    background: #fff;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  .listing-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  }
+
+  .card-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    background: var(--parchment);
+    position: relative;
+    overflow: hidden;
+  }
+  .card-img-wrap {
+    position: relative;
+    overflow: hidden;
+  }
+  .card-img-wrap img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s;
+  }
+  .listing-card:hover .card-img-wrap img { transform: scale(1.04); }
+  .listing-card.featured .card-img-wrap img { height: 340px; }
+
+  .card-region-tag {
+    position: absolute;
+    top: 14px; left: 14px;
+    background: var(--deep-teal);
+    color: #fff;
+    font-family: 'Jost', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    z-index: 2;
+  }
+  .card-new-tag {
+    position: absolute;
+    top: 14px; right: 14px;
+    background: var(--terracotta);
+    color: #fff;
+    font-family: 'Jost', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    z-index: 2;
+  }
+
+  .card-body {
+    padding: 22px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .listing-card.featured .card-body {
+    padding: 36px 36px;
+    justify-content: center;
+  }
+
+  .card-location {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--deep-teal);
+  }
+  .listing-card.featured .card-title { font-size: 28px; }
+  .card-excerpt {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .card-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--terracotta);
+  }
+  .listing-card.featured .card-price { font-size: 30px; }
+  .card-details {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    display: flex;
+    gap: 14px;
+  }
+  .card-detail { display: flex; align-items: center; gap: 4px; }
+  .card-read-more {
+    display: inline-block;
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--deep-teal);
+    border-bottom: 1.5px solid var(--gold);
+    padding-bottom: 2px;
+    text-decoration: none;
+    margin-top: 6px;
+    transition: color 0.2s;
+  }
+  .card-read-more:hover { color: var(--terracotta); }
+
+  /* ── SIDEBAR ── */
+  .sidebar { display: flex; flex-direction: column; gap: 36px; }
+
+  .sidebar-widget {
+    background: #fff;
+    padding: 26px 24px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+  }
+  .widget-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--deep-teal);
+    border-bottom: 2px solid var(--terracotta);
+    padding-bottom: 10px;
+    margin-bottom: 18px;
+    letter-spacing: 0.02em;
+  }
+
+  /* Newsletter widget */
+  .newsletter-widget { background: var(--deep-teal); color: #fff; }
+  .newsletter-widget .widget-title { color: var(--gold-light); border-bottom-color: var(--gold); }
+  .newsletter-copy {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .newsletter-input {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    margin-bottom: 10px;
+    outline: none;
+  }
+  .newsletter-input::placeholder { color: rgba(255,255,255,0.4); }
+  .newsletter-btn {
+    width: 100%;
+    padding: 12px;
+    background: var(--terracotta);
+    color: #fff;
+    border: none;
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .newsletter-btn:hover { background: var(--terracotta-light); }
+
+  /* Region links */
+  .region-list { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+  .region-list li a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    color: var(--ink);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    transition: color 0.2s, padding-left 0.2s;
+  }
+  .region-list li a:hover { color: var(--terracotta); padding-left: 6px; }
+  .region-list .count {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    background: var(--parchment);
+    color: var(--muted);
+    padding: 2px 9px;
+    border-radius: 20px;
+  }
+
+  /* Recent listings sidebar */
+  .mini-listing {
+    display: flex;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s;
+  }
+  .mini-listing:hover { opacity: 0.75; }
+  .mini-listing:last-child { border-bottom: none; }
+  .mini-img {
+    width: 72px;
+    height: 60px;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: var(--parchment);
+  }
+  .mini-info { flex: 1; }
+  .mini-loc {
+    font-family: 'Jost', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 3px;
+  }
+  .mini-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    line-height: 1.3;
+    color: var(--deep-teal);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .mini-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--terracotta);
+    margin-top: 4px;
+  }
+
+  /* Dream Destinations map widget */
+  .map-widget { background: var(--deep-teal); }
+  .map-widget .widget-title { color: var(--gold-light); border-bottom-color: var(--gold); }
+  .world-map-svg { width: 100%; opacity: 0.85; }
+  .map-pins { margin-top: 12px; display: flex; flex-direction: column; gap: 6px; }
+  .map-pin {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.06em;
+  }
+  .pin-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── PAGINATION ── */
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 40px 0 0;
+    grid-column: 1 / -1;
+  }
+  .page-btn {
+    width: 38px; height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    border: 1.5px solid var(--border);
+    background: #fff;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+  .page-btn:hover, .page-btn.active {
+    background: var(--deep-teal);
+    border-color: var(--deep-teal);
+    color: #fff;
+  }
+  .page-btn.active { background: var(--terracotta); border-color: var(--terracotta); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--deep-teal);
+    color: rgba(255,255,255,0.65);
+    margin-top: 60px;
+  }
+  .footer-top {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 56px 40px 40px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+  }
+  .footer-brand .logo-main { font-size: 24px; margin-bottom: 12px; }
+  .footer-brand p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.55);
+  }
+  .footer-col h4 {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 16px;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .footer-col ul a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-col ul a:hover { color: var(--gold-light); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 20px 40px;
+    text-align: center;
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* ── DECORATIVE DIVIDER ── */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 8px 0 32px;
+  }
+  .divider-line { flex: 1; height: 1px; background: var(--border); }
+  .divider-ornament { color: var(--gold); font-size: 18px; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .listing-card { animation: fadeUp 0.5s ease both; }
+  .listing-card:nth-child(1) { animation-delay: 0.05s; }
+  .listing-card:nth-child(2) { animation-delay: 0.12s; }
+  .listing-card:nth-child(3) { animation-delay: 0.19s; }
+  .listing-card:nth-child(4) { animation-delay: 0.26s; }
+  .listing-card:nth-child(5) { animation-delay: 0.33s; }
+  .listing-card:nth-child(6) { animation-delay: 0.40s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 960px) {
+    .site-wrap { grid-template-columns: 1fr; padding: 32px 24px; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    header { padding: 20px 24px; }
+    .hero-caption { padding: 30px 28px; }
+    .hero-dots { right: 28px; }
+  }
+  @media (max-width: 640px) {
+    .listings-grid { grid-template-columns: 1fr; }
+    .listing-card.featured { grid-template-columns: 1fr; }
+    .listing-card.featured .card-img-wrap img { height: 220px; }
+    .filter-bar { padding: 12px 20px; }
+    .footer-top { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  🌍 New listings added weekly from 40+ countries &nbsp;·&nbsp; <a href="#">Subscribe for alerts</a>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div style="flex:1; display:flex; justify-content:flex-start; gap:20px;">
+    <nav style="background:transparent; border:none; gap:0; padding:0; display:flex; flex-wrap:wrap;">
+      <a href="#" style="padding:6px 14px; font-size:10px;" class="active">Home</a>
+      <a href="#" style="padding:6px 14px; font-size:10px;">Listings</a>
+      <a href="#" style="padding:6px 14px; font-size:10px;">By Region</a>
+      <a href="#" style="padding:6px 14px; font-size:10px;">Expat Guides</a>
+    </nav>
+  </div>
+  <div class="logo-block">
+    <div class="logo-eyebrow">A Journal of International Real Estate</div>
+    <div class="logo-main">Expat Home <em>Dreaming</em></div>
+    <div class="logo-tagline">Homes for sale across every corner of the world</div>
+  </div>
+  <div style="flex:1; display:flex; justify-content:flex-end; align-items:center; gap:14px;">
+    <button style="background:none;border:none;cursor:pointer;color:rgba(255,255,255,0.6);font-size:20px;">🔍</button>
+    <a href="#newsletter" style="background:var(--terracotta);color:#fff;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;padding:9px 18px;text-decoration:none;">Subscribe</a>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="active">All Listings</a>
+  <a href="#">Deal of the Week</a>
+  <a href="#">Europe</a>
+  <a href="#">Latin America</a>
+  <a href="#">Southeast Asia</a>
+  <a href="#">Mediterranean</a>
+  <a href="#">Africa</a>
+  <a href="#">Expat Life</a>
+  <a href="#">About</a>
+</nav>
+
+<!-- HERO SLIDESHOW -->
+<div class="hero">
+  <div class="hero-slides" id="heroSlides">
+
+    <!-- Slide 1 -->
+    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1600&q=80')">
+      <div class="hero-caption">
+        <div class="hero-tag">🇵🇹 Portugal · Featured Listing</div>
+        <div class="hero-title">Romantic 18th-Century Quinta with Vineyard Views in the Douro Valley</div>
+        <div class="hero-meta">
+          <div class="hero-price">€485,000</div>
+          <div class="hero-loc">Pinhão, Douro Valley, Portugal</div>
+          <a href="#" class="hero-btn">View This Home</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1600&q=80')">
+      <div class="hero-caption">
+        <div class="hero-tag">🇲🇽 Mexico · Deal of the Week</div>
+        <div class="hero-title">Hacienda-Style Home with Courtyard Pool in Historic San Miguel de Allende</div>
+        <div class="hero-meta">
+          <div class="hero-price">$395,000 USD</div>
+          <div class="hero-loc">San Miguel de Allende, Guanajuato, Mexico</div>
+          <a href="#" class="hero-btn">View This Home</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1599619351208-3e6c839d6828?w=1600&q=80')">
+      <div class="hero-caption">
+        <div class="hero-tag">🇬🇷 Greece · Just Listed</div>
+        <div class="hero-title">Whitewashed Cycladic Villa Steps from the Sea on Paros Island</div>
+        <div class="hero-meta">
+          <div class="hero-price">€320,000</div>
+          <div class="hero-loc">Paros, Cyclades, Greece</div>
+          <a href="#" class="hero-btn">View This Home</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1524230572899-a752b3835840?w=1600&q=80')">
+      <div class="hero-caption">
+        <div class="hero-tag">🇮🇹 Italy · Editor's Pick</div>
+        <div class="hero-title">Stone Farmhouse with Olive Grove and Panoramic Tuscan Hillside Views</div>
+        <div class="hero-meta">
+          <div class="hero-price">€695,000</div>
+          <div class="hero-loc">Montepulciano, Tuscany, Italy</div>
+          <a href="#" class="hero-btn">View This Home</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="hero-arrows">
+    <button class="hero-arrow" id="heroPrev">&#8592;</button>
+    <button class="hero-arrow" id="heroNext">&#8594;</button>
+  </div>
+  <div class="hero-dots" id="heroDots">
+    <button class="hero-dot active"></button>
+    <button class="hero-dot"></button>
+    <button class="hero-dot"></button>
+    <button class="hero-dot"></button>
+  </div>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <span class="filter-label">Filter by Region:</span>
+  <button class="filter-btn active" onclick="filterListings('all', this)">All</button>
+  <button class="filter-btn" onclick="filterListings('europe', this)">Europe</button>
+  <button class="filter-btn" onclick="filterListings('latin-america', this)">Latin America</button>
+  <button class="filter-btn" onclick="filterListings('southeast-asia', this)">Southeast Asia</button>
+  <button class="filter-btn" onclick="filterListings('mediterranean', this)">Mediterranean</button>
+  <button class="filter-btn" onclick="filterListings('africa', this)">Africa &amp; Middle East</button>
+  <button class="filter-btn" onclick="filterListings('caribbean', this)">Caribbean</button>
+  <button class="filter-btn" onclick="filterListings('oceania', this)">Oceania</button>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="site-wrap">
+
+  <!-- LISTINGS -->
+  <main>
+    <div class="listings-header">
+      <div class="listings-heading">Latest Listings</div>
+      <div class="listings-count" id="listingsCount">Showing 7 homes</div>
+    </div>
+
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-ornament">✦</div>
+      <div class="divider-line"></div>
+    </div>
+
+    <div class="listings-grid" id="listingsGrid">
+
+      <!-- FEATURED -->
+      <a href="#" class="listing-card featured" data-region="europe">
+        <div class="card-img-wrap" style="position:relative;">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" alt="French farmhouse">
+          <div class="card-region-tag">🇫🇷 France</div>
+          <div class="card-new-tag">Editor's Pick</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location">Provence-Alpes-Côte d'Azur, France</div>
+          <div class="card-title">18th-Century Provençal Mas with Lavender Fields and Private Pool</div>
+          <div class="card-excerpt">Stone walls, shuttered windows, and acres of lavender surround this exquisitely restored farmhouse. The main house features four bedrooms, a vaulted dining room, and a sun-drenched terrace with views across the valley.</div>
+          <div class="card-footer">
+            <div>
+              <div class="card-price">€875,000</div>
+              <div class="card-details">
+                <span class="card-detail">🛏 4 bd</span>
+                <span class="card-detail">🛁 3 ba</span>
+                <span class="card-detail">📐 320 m²</span>
+              </div>
+            </div>
+            <span class="card-read-more">Read More →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 2 -->
+      <a href="#" class="listing-card" data-region="latin-america">
+        <div class="card-img-wrap" style="position:relative;">
+          <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&q=80" alt="Costa Rica villa">
+          <div class="card-region-tag">🇨🇷 Costa Rica</div>
+          <div class="card-new-tag">New</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location">Uvita, Osa Peninsula, Costa Rica</div>
+          <div class="card-title">Jungle-Edge Villa with Ocean Views and Infinity Pool</div>
+          <div class="card-excerpt">Wake to howler monkeys and ocean breezes in this architect-designed retreat on three private jungle acres just minutes from Marino Ballena national park.</div>
+          <div class="card-footer">
+            <div>
+              <div class="card-price">$560,000 USD</div>
+              <div class="card-details">
+                <span class="card-detail">🛏 3 bd</span>
+                <span class="card-detail">🛁 3 ba</span>
+                <span class="card-detail">📐 210 m²</span>
+              </div>
+            </div>
+            <span class="card-read-more">Read More →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 3 -->
+      <a href="#" class="listing-card" data-region="southeast-asia">
+        <div class="card-img-wrap" style="position:relative;">
+          <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=600&q=80" alt="Bali villa">
+          <div class="card-region-tag">🇮🇩 Indonesia</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location">Canggu, Bali, Indonesia</div>
+          <div class="card-title">Luxury Rice-Paddy Villa with Open-Air Living and Balinese Pavilion</div>
+          <div class="card-excerpt">Seamlessly blending indoor and outdoor living, this freehold villa features a 20-meter lap pool, private gazebo, and breathtaking paddy field vistas from every room.</div>
+          <div class="card-footer">
+            <div>
+              <div class="card-price">$385,000 USD</div>
+              <div class="card-details">
+                <span class="card-detail">🛏 4 bd</span>
+                <span class="card-detail">🛁 4 ba</span>
+                <span class="card-detail">📐 400 m²</span>
+              </div>
+            </div>
+            <span class="card-read-more">Read More →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 4 -->
+      <a href="#" class="listing-card" data-region="mediterranean">
+        <div class="card-img-wrap" style="position:relative;">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Spanish home">
+          <div class="card-region-tag">🇪🇸 Spain</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location">Altea, Costa Blanca, Spain</div>
+          <div class="card-title">Hilltop Whitewashed Villa with Panoramic Sea Views and Terraced Gardens</div>
+          <div class="card-excerpt">This traditional Altean home perches above the cobblestoned old town, offering sweeping Mediterranean views, mature citrus trees, and authentic Moorish tilework throughout.</div>
+          <div class="card-footer">
+            <div>
+              <div class="card-price">€520,000</div>
+              <div class="card-details">
+                <span class="card-detail">🛏 3 bd</span>
+                <span class="card-detail">🛁 2 ba</span>
+                <span class="card-detail">📐 175 m²</span>
+              </div>
+            </div>
+            <span class="card-read-more">Read More →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 5 -->
+      <a href="#" class="listing-card" data-region="africa">
+        <div class="card-img-wrap" style="position:relative;">
+          <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&q=80" alt="Morocco riad">
+          <div class="card-region-tag">🇲🇦 Morocco</div>
+          <div class="card-new-tag">Deal</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location">Marrakech Medina, Morocco</div>
+          <div class="card-title">Authentic Riad with Mosaic Courtyard and Rooftop Terrace in the Medina</div>
+          <div class="card-excerpt">Hidden behind a modest wooden door lies this treasure: a restored 19th-century riad with hand-carved plaster ceilings, zellige tile fountains, and a rooftop terrace with Atlas Mountain views.</div>
+          <div class="card-footer">
+            <div>
+              <div class="card-price">$215,000 USD</div>
+              <div class="card-details">
+                <span class="card-detail">🛏 5 bd</span>
+                <span class="card-detail">🛁 4 ba</span>
+                <span class="card-detail">📐 280 m²</span>
+              </div>
+            </div>
+            <span class="card-read-more">Read More →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 6 -->
+      <a href="#" class="listing-card" data-region="caribbean">
+        <div class="card-img-wrap" style="position:relative;">
+          <img src="https://images.unsplash.com/photo-1602002418082-dd4a3f5b4f65?w=600&q=80" alt="Caribbean home">
+          <div class="card-region-tag">🇵🇦 Panama</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location">Bocas del Toro, Panama</div>
+          <div class="card-title">Overwater Bungalow with Private Dock on Turquoise Caribbean Lagoon</div>
+          <div class="card-excerpt">A genuinely rare find — this stilted Caribbean home sits directly over the water with a private dock, coral snorkeling steps away, and the kind of sunsets that stop time completely.</div>
+          <div class="card-footer">
+            <div>
+              <div class="card-price">$175,000 USD</div>
+              <div class="card-details">
+                <span class="card-detail">🛏 2 bd</span>
+                <span class="card-detail">🛁 2 ba</span>
+                <span class="card-detail">📐 120 m²</span>
+              </div>
+            </div>
+            <span class="card-read-more">Read More →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 7 -->
+      <a href="#" class="listing-card" data-region="europe">
+        <div class="card-img-wrap" style="position:relative;">
+          <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80" alt="Cottage">
+          <div class="card-region-tag">🇮🇪 Ireland</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location">County Clare, Wild Atlantic Way, Ireland</div>
+          <div class="card-title">Charming Stone Cottage on 4 Acres with Sea Views Along the Burren</div>
+          <div class="card-excerpt">A lovingly restored 1890s stone cottage with a turf fireplace, flagstone floors, and acres of wildflower meadow tumbling down toward Galway Bay. Full planning for a second structure already in place.</div>
+          <div class="card-footer">
+            <div>
+              <div class="card-price">€285,000</div>
+              <div class="card-details">
+                <span class="card-detail">🛏 3 bd</span>
+                <span class="card-detail">🛁 1 ba</span>
+                <span class="card-detail">📐 110 m²</span>
+              </div>
+            </div>
+            <span class="card-read-more">Read More →</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- PAGINATION -->
+    <div class="pagination">
+      <a href="#" class="page-btn active">1</a>
+      <a href="#" class="page-btn">2</a>
+      <a href="#" class="page-btn">3</a>
+      <a href="#" class="page-btn">4</a>
+      <span style="font-family:'Jost',sans-serif;font-size:13px;color:var(--muted);padding:0 4px;">…</span>
+      <a href="#" class="page-btn">12</a>
+      <a href="#" class="page-btn" style="width:auto;padding:0 14px;">Next →</a>
+    </div>
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <!-- Newsletter -->
+    <div class="sidebar-widget newsletter-widget" id="newsletter">
+      <div class="widget-title">✉ Dream Delivered Weekly</div>
+      <div class="newsletter-copy">Get the world's most beautiful homes for sale delivered to your inbox every Tuesday morning.</div>
+      <input class="newsletter-input" type="email" placeholder="your@email.com">
+      <button class="newsletter-btn">Subscribe — It's Free</button>
+    </div>
+
+    <!-- Browse by Region -->
+    <div class="sidebar-widget">
+      <div class="widget-title">Browse by Region</div>
+      <ul class="region-list">
+        <li><a href="#">🇪🇺 Europe <span class="count">142</span></a></li>
+        <li><a href="#">🌴 Latin America <span class="count">87</span></a></li>
+        <li><a href="#">🏝 Southeast Asia <span class="count">63</span></a></li>
+        <li><a href="#">☀️ Mediterranean <span class="count">95</span></a></li>
+        <li><a href="#">🌍 Africa &amp; Middle East <span class="count">41</span></a></li>
+        <li><a href="#">🏖 Caribbean <span class="count">52</span></a></li>
+        <li><a href="#">🦘 Oceania <span class="count">28</span></a></li>
+        <li><a href="#">❄️ Scandinavia <span class="count">19</span></a></li>
+      </ul>
+    </div>
+
+    <!-- Destinations Map Widget -->
+    <div class="sidebar-widget map-widget">
+      <div class="widget-title">🗺 Active Listing Countries</div>
+      <svg class="world-map-svg" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+        <rect width="400" height="200" fill="rgba(255,255,255,0.05)" rx="4"/>
+        <!-- Simplified continent shapes -->
+        <!-- Americas -->
+        <ellipse cx="90" cy="90" rx="50" ry="65" fill="rgba(180,148,63,0.2)" stroke="rgba(180,148,63,0.4)" stroke-width="1"/>
+        <!-- Europe -->
+        <ellipse cx="195" cy="70" rx="28" ry="30" fill="rgba(196,103,58,0.25)" stroke="rgba(196,103,58,0.5)" stroke-width="1"/>
+        <!-- Africa -->
+        <ellipse cx="200" cy="130" rx="30" ry="38" fill="rgba(180,148,63,0.2)" stroke="rgba(180,148,63,0.4)" stroke-width="1"/>
+        <!-- Asia -->
+        <ellipse cx="300" cy="80" rx="65" ry="45" fill="rgba(42,82,82,0.4)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <!-- Oceania -->
+        <ellipse cx="320" cy="150" rx="30" ry="20" fill="rgba(42,82,82,0.3)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+        <!-- Pins for active listings -->
+        <circle cx="195" cy="68" r="4" fill="#c4673a" opacity="0.9"/>
+        <circle cx="205" cy="75" r="3" fill="#b8943f" opacity="0.9"/>
+        <circle cx="188" cy="80" r="3" fill="#c4673a" opacity="0.8"/>
+        <circle cx="200" cy="125" r="3.5" fill="#b8943f" opacity="0.9"/>
+        <circle cx="85" cy="100" r="3" fill="#c4673a" opacity="0.8"/>
+        <circle cx="75" cy="85" r="3" fill="#b8943f" opacity="0.8"/>
+        <circle cx="310" cy="105" r="3" fill="#c4673a" opacity="0.8"/>
+        <circle cx="280" cy="90" r="3.5" fill="#b8943f" opacity="0.9"/>
+        <circle cx="325" cy="148" r="3" fill="#c4673a" opacity="0.7"/>
+      </svg>
+      <div class="map-pins">
+        <div class="map-pin"><div class="pin-dot" style="background:var(--terracotta)"></div>Active listings</div>
+        <div class="map-pin"><div class="pin-dot" style="background:var(--gold)"></div>Deal of the week</div>
+      </div>
+    </div>
+
+    <!-- Recently Added -->
+    <div class="sidebar-widget">
+      <div class="widget-title">Recently Added</div>
+
+      <a href="#" class="mini-listing">
+        <img class="mini-img" src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=200&q=70" alt="">
+        <div class="mini-info">
+          <div class="mini-loc">🇹🇭 Thailand</div>
+          <div class="mini-title">Traditional Thai Teak House on Quiet Canal in Chiang Mai</div>
+          <div class="mini-price">$145,000</div>
+        </div>
+      </a>
+
+      <a href="#" class="mini-listing">
+        <img class="mini-img" src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=200&q=70" alt="">
+        <div class="mini-info">
+          <div class="mini-loc">🇧🇷 Brazil</div>
+          <div class="mini-title">Colonial Mansion in Historic Ouro Preto with Original Blue Tilework</div>
+          <div class="mini-price">$295,000</div>
+        </div>
+      </a>
+
+      <a href="#" class="mini-listing">
+        <img class="mini-img" src="https://images.unsplash.com/photo-1598928636135-d146006ff4be?w=200&q=70" alt="">
+        <div class="mini-info">
+          <div class="mini-loc">🇳🇿 New Zealand</div>
+          <div class="mini-title">Vineyard Homestead in Marlborough Wine Country on 12 Acres</div>
+          <div class="mini-price">NZD 1.2M</div>
+        </div>
+      </a>
+
+      <a href="#" class="mini-listing">
+        <img class="mini-img" src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=200&q=70" alt="">
+        <div class="mini-info">
+          <div class="mini-loc">🇹🇷 Turkey</div>
+          <div class="mini-title">Restored Ottoman Mansion in Fethiye Old Town with Courtyard</div>
+          <div class="mini-price">€310,000</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- About widget -->
+    <div class="sidebar-widget" style="background:var(--parchment);border-left:4px solid var(--terracotta);">
+      <div class="widget-title" style="border-bottom-color:var(--gold);">About This Site</div>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:16px;line-height:1.7;color:var(--muted);">
+        <em>Expat Home Dreaming</em> is a curated journal of homes for sale around the world — from Moroccan riads to Irish stone cottages to Balinese villas. We find the beautiful, the affordable, and the extraordinary so you can dream with purpose.
+      </p>
+      <a href="#" style="display:inline-block;margin-top:14px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--deep-teal);border-bottom:1.5px solid var(--gold);padding-bottom:2px;text-decoration:none;">Read Our Story →</a>
+    </div>
+
+  </aside>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo-eyebrow" style="color:var(--gold-light);font-family:'Jost',sans-serif;font-size:9px;letter-spacing:0.3em;text-transform:uppercase;margin-bottom:8px;">A Journal of International Real Estate</div>
+      <div class="logo-main" style="color:#fff;font-family:'Playfair Display',serif;">Expat Home <em style="color:var(--gold-light);font-style:italic;">Dreaming</em></div>
+      <p style="margin-top:14px;">Helping dreamers, wanderers, and adventurers find their perfect home on every continent since 2018.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Browse</h4>
+      <ul>
+        <li><a href="#">All Listings</a></li>
+        <li><a href="#">Deal of the Week</a></li>
+        <li><a href="#">By Country</a></li>
+        <li><a href="#">By Price</a></li>
+        <li><a href="#">New This Week</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Regions</h4>
+      <ul>
+        <li><a href="#">Europe</a></li>
+        <li><a href="#">Latin America</a></li>
+        <li><a href="#">Southeast Asia</a></li>
+        <li><a href="#">Mediterranean</a></li>
+        <li><a href="#">Caribbean</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Guides</h4>
+      <ul>
+        <li><a href="#">Buying Abroad 101</a></li>
+        <li><a href="#">Visa &amp; Residency</a></li>
+        <li><a href="#">Expat Communities</a></li>
+        <li><a href="#">Currency &amp; Finance</a></li>
+        <li><a href="#">About &amp; Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 Expat Home Dreaming &nbsp;·&nbsp; All listings are for informational purposes only. Always verify details with local agents. &nbsp;·&nbsp; <a href="#" style="color:rgba(255,255,255,0.4);">Privacy</a>
+  </div>
+</footer>
+
+<script>
+  // ── HERO SLIDESHOW ──
+  let current = 0;
+  const slides = document.getElementById('heroSlides');
+  const dots = document.querySelectorAll('.hero-dot');
+  const total = 4;
+  let autoTimer;
+
+  function goTo(n) {
+    current = (n + total) % total;
+    slides.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+  function startAuto() { autoTimer = setInterval(() => goTo(current + 1), 5000); }
+  function resetAuto() { clearInterval(autoTimer); startAuto(); }
+
+  document.getElementById('heroNext').onclick = () => { goTo(current + 1); resetAuto(); };
+  document.getElementById('heroPrev').onclick = () => { goTo(current - 1); resetAuto(); };
+  dots.forEach((d, i) => d.addEventListener('click', () => { goTo(i); resetAuto(); }));
+  startAuto();
+
+  // ── FILTER ──
+  function filterListings(region, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const cards = document.querySelectorAll('#listingsGrid .listing-card');
+    let visible = 0;
+    cards.forEach(card => {
+      const show = region === 'all' || card.dataset.region === region;
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    document.getElementById('listingsCount').textContent = `Showing ${visible} home${visible !== 1 ? 's' : ''}`;
+  }
+</script>
+</body>
+</html>
