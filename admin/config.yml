@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: expathomedreaming/expat-home-dreaming
   branch: main
 
 media_folder: "images/uploads"
